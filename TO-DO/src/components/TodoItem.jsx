@@ -44,11 +44,15 @@ const TodoItem = ({ task }) => {
           checked={task.completed}
           onChange={() => toggleTaskCompletion(task.id)}
           className="todo-checkbox"
-          aria-label={`Mark ${task.title} as ${task.completed ? 'incomplete' : 'complete'}`}
+          aria-label={`Mark ${task.title} as ${
+            task.completed ? "incomplete" : "complete"
+          }`}
         />
 
         <span className="todo-title">
-          <span className="priority-indicator" aria-hidden="true">{getPriorityEmoji()}</span>
+          <span className="priority-indicator" aria-hidden="true">
+            {getPriorityEmoji()}
+          </span>
           {task.title}
         </span>
       </div>
@@ -65,8 +69,8 @@ const TodoItem = ({ task }) => {
           <option value="Low">Low</option>
         </select>
 
-        <button 
-          onClick={() => deleteTask(task.id)} 
+        <button
+          onClick={() => deleteTask(task.id)}
           className="delete-button"
           aria-label={`Delete task: ${task.title}`}
         >
