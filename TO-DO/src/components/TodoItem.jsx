@@ -5,21 +5,21 @@ const TodoItem = ({ task }) => {
   const { deleteTask, updateTaskPriority, toggleTaskCompletion } = useTodo();
 
   // Get CSS class based on priority
-  const getPriorityClass = () => {
+  const getImportanceClass = () => {
     switch (task.priority) {
       case "High":
-        return "priority-high";
+        return "important-task";
       case "Medium":
-        return "priority-medium";
+        return "normal-task";
       case "Low":
-        return "priority-low";
+        return "not-urgent";
       default:
         return "";
     }
   };
 
   // Get priority emoji for better visual cues
-  const getPriorityEmoji = () => {
+  const getEmojiIcon = () => {
     switch (task.priority) {
       case "High":
         return "🔴 ";
@@ -34,47 +34,47 @@ const TodoItem = ({ task }) => {
 
   return (
     <div
-      className={`todo-item ${getPriorityClass()} ${
-        task.completed ? "completed" : ""
+      className={`task-box ${getImportanceClass()} ${
+        task.completed ? "done" : ""
       }`}
     >
-      <div className="todo-content">
+      <div className="task-left-side">
         <input
           type="checkbox"
           checked={task.completed}
           onChange={() => toggleTaskCompletion(task.id)}
-          className="todo-checkbox"
+          className="done-checkbox"
           aria-label={`Mark ${task.title} as ${
-            task.completed ? "incomplete" : "complete"
+            task.completed ? "not done" : "done"
           }`}
         />
 
-        <span className="todo-title">
-          <span className="priority-indicator" aria-hidden="true">
-            {getPriorityEmoji()}
+        <span className="task-text">
+          <span className="task-icon" aria-hidden="true">
+            {getEmojiIcon()}
           </span>
           {task.title}
         </span>
       </div>
 
-      <div className="todo-actions">
+      <div className="task-right-side">
         <select
           value={task.priority}
           onChange={(e) => updateTaskPriority(task.id, e.target.value)}
-          className="priority-update"
-          aria-label="Change task priority"
+          className="change-importance"
+          aria-label="Change importance"
         >
-          <option value="High">High</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
+          <option value="High">Important!</option>
+          <option value="Medium">Normal</option>
+          <option value="Low">Low priority</option>
         </select>
 
         <button
           onClick={() => deleteTask(task.id)}
-          className="delete-button"
+          className="remove-btn"
           aria-label={`Delete task: ${task.title}`}
         >
-          Delete
+          Remove
         </button>
       </div>
     </div>

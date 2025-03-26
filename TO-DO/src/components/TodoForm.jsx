@@ -2,48 +2,48 @@ import React, { useState } from "react";
 import { useTodo } from "../contexts/TodoContext";
 
 const TodoForm = () => {
-  const [title, setTitle] = useState("");
-  const [priority, setPriority] = useState("Medium");
+  const [taskText, setTaskText] = useState("");
+  const [importance, setImportance] = useState("Medium");
   const { addTask } = useTodo();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim()) {
-      addTask(title, priority);
-      setTitle("");
-      setPriority("Medium");
+    if (taskText.trim()) {
+      addTask(taskText, importance);
+      setTaskText("");
+      setImportance("Medium");
     }
   };
 
   return (
-    <form className="todo-form" onSubmit={handleSubmit}>
-      <div className="form-row">
-        <div className="input-wrapper">
+    <form className="add-task-box" onSubmit={handleSubmit}>
+      <div className="input-row">
+        <div className="text-field-container">
           <input
             type="text"
-            placeholder="Add a new task..."
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="task-input"
+            placeholder="Type your task here..."
+            value={taskText}
+            onChange={(e) => setTaskText(e.target.value)}
+            className="task-text-input"
             required
           />
         </div>
 
-        <div className="select-wrapper">
+        <div className="dropdown-container">
           <select
-            value={priority}
-            onChange={(e) => setPriority(e.target.value)}
-            className="priority-select"
+            value={importance}
+            onChange={(e) => setImportance(e.target.value)}
+            className="importance-dropdown"
           >
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
+            <option value="High">Important!</option>
+            <option value="Medium">Normal</option>
+            <option value="Low">Low priority</option>
           </select>
         </div>
 
-        <div className="button-wrapper">
-          <button type="submit" className="add-button">
-            Add Task
+        <div className="button-container">
+          <button type="submit" className="save-task-btn">
+            Save Task
           </button>
         </div>
       </div>

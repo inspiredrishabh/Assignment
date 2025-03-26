@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 
 const Login = () => {
-  const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const { login, error, clearError, isAuthenticated } = useAuth();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(user, pass);
+    login(username, password);
   };
 
   if (isAuthenticated) {
@@ -31,8 +31,8 @@ const Login = () => {
           <input
             type="text"
             id="username"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             placeholder="Your username"
             required
           />
@@ -43,8 +43,8 @@ const Login = () => {
           <input
             type="password"
             id="password"
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Your password"
             required
           />
