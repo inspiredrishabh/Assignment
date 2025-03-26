@@ -12,22 +12,19 @@ const AppContent = () => {
   const { isAuthenticated } = useAuth();
 
   return (
-    <div className="my-app">
+    <div className="app-container">
       <Header />
 
-      <div className="main-content">
-        {isAuthenticated ? (
-          <div className="tasks-area">
-            <h2 className="page-title">My To-Do List</h2>
-            <TodoForm />
-            <TodoList />
-          </div>
-        ) : (
-          <div className="login-area">
-            <Login />
-          </div>
-        )}
-      </div>
+      {isAuthenticated ? (
+        <div className="todo-container">
+          <TodoForm />
+          <TodoList />
+        </div>
+      ) : (
+        <div className="auth-container">
+          <Login />
+        </div>
+      )}
     </div>
   );
 };

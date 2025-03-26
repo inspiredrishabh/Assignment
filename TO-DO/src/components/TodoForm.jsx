@@ -2,48 +2,48 @@ import React, { useState } from "react";
 import { useTodo } from "../contexts/TodoContext";
 
 const TodoForm = () => {
-  const [taskText, setTaskText] = useState("");
-  const [importance, setImportance] = useState("Medium");
+  const [title, setTitle] = useState("");
+  const [priority, setPriority] = useState("Medium");
   const { addTask } = useTodo();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (taskText.trim()) {
-      addTask(taskText, importance);
-      setTaskText("");
-      setImportance("Medium");
+    if (title.trim()) {
+      addTask(title, priority);
+      setTitle("");
+      setPriority("Medium");
     }
   };
 
   return (
-    <form className="add-task-box" onSubmit={handleSubmit}>
-      <div className="input-row">
-        <div className="text-field-container">
+    <form className="todo-form" onSubmit={handleSubmit}>
+      <div className="form-row">
+        <div className="input-wrapper">
           <input
             type="text"
-            placeholder="Type your task here..."
-            value={taskText}
-            onChange={(e) => setTaskText(e.target.value)}
-            className="task-text-input"
+            placeholder="Add a new task..."
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="task-input"
             required
           />
         </div>
 
-        <div className="dropdown-container">
+        <div className="select-wrapper">
           <select
-            value={importance}
-            onChange={(e) => setImportance(e.target.value)}
-            className="importance-dropdown"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+            className="priority-select"
           >
-            <option value="High">Important!</option>
-            <option value="Medium">Normal</option>
-            <option value="Low">Low priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
           </select>
         </div>
 
-        <div className="button-container">
-          <button type="submit" className="save-task-btn">
-            Save Task
+        <div className="button-wrapper">
+          <button type="submit" className="add-button">
+            Add Task
           </button>
         </div>
       </div>

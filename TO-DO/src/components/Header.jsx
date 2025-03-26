@@ -5,42 +5,42 @@ const Header = () => {
   const { isAuthenticated, username, logout } = useAuth();
 
   return (
-    <header className="header-top">
-      <div className="logo-area">
-        <div className="app-brand">
-          <span className="checkmark">✓</span>
-          <h1>MyTasks</h1>
+    <header className="app-header">
+      <div className="header-left">
+        <div className="brand">
+          <span className="logo">✓</span>
+          <h1>Todo App</h1>
         </div>
       </div>
 
-      <nav className="top-menu">
-        <ul className="menu-items">
-          <li className="menu-item active">
+      <nav className="main-nav">
+        <ul className="nav-links">
+          <li className="nav-item active">
             <a href="#home">Home</a>
           </li>
-          <li className="menu-item">
-            <a href="#mytasks">My Stuff</a>
+          <li className="nav-item">
+            <a href="#tasks">Tasks</a>
           </li>
-          <li className="menu-item">
-            <a href="#about">About</a>
+          <li className="nav-item">
+            <a href="#help">Help</a>
           </li>
         </ul>
       </nav>
 
-      <div className="user-corner">
+      <div className="header-right">
         {isAuthenticated ? (
-          <div className="user-box">
-            <div className="user-hello">
-              <span className="hi-text">Hi,</span>
-              <span className="user-name">{username}</span>
+          <div className="user-info">
+            <div className="user-welcome">
+              <span className="greeting">Welcome,</span>
+              <span className="username">{username}</span>
             </div>
-            <button onClick={logout} className="signout-btn">
-              Sign out
+            <button onClick={logout} className="logout-button">
+              Logout
             </button>
           </div>
         ) : (
-          <div className="login-btns">
-            <button className="signin-btn">Sign in</button>
+          <div className="auth-buttons">
+            <button className="login-nav-button">Login</button>
           </div>
         )}
       </div>

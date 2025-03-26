@@ -21,41 +21,41 @@ const Login = () => {
   }
 
   return (
-    <div className="login-box">
-      <h2>Sign In</h2>
+    <div className="login-container">
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        {error && <div className="error-box">{error}</div>}
+        {error && <div className="error-message">{error}</div>}
 
-        <div className="input-group">
+        <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Your username"
+            placeholder="Enter username"
             required
           />
         </div>
 
-        <div className="input-group">
+        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Your password"
+            placeholder="Enter password"
             required
           />
         </div>
 
-        <button type="submit" className="signin-button">
-          Sign In
+        <button type="submit" className="login-button">
+          Login
         </button>
       </form>
 
-      <p className="login-tip">
+      <p className="login-hint">
         Hint: Try username "admin" with password "admin123"
       </p>
     </div>
