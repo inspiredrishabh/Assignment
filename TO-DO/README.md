@@ -13,6 +13,26 @@ A simple React Todo application with user authentication, task prioritization, a
 - **Priority System**: Tasks can be set as High, Medium, or Low priority
 - **Persistence**: Tasks and login state persist through browser sessions using localStorage
 
+## Application Overview
+
+Here's a visual overview of the application:
+
+### Login Screen
+
+![Login Screen](/1.png)
+
+### Task Dashboard
+
+![Task Dashboard](/2.png)
+
+### Adding a New Task
+
+![Adding a Task](/3.png)
+
+### Responsivenes
+
+![Task Management](/4.png)
+
 ## Built With
 
 - React 19
