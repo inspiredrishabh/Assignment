@@ -21,7 +21,9 @@ const AppContent = () => {
           <TodoList />
         </div>
       ) : (
-        <Login />
+        <div className="auth-container">
+          <Login />
+        </div>
       )}
     </div>
   );

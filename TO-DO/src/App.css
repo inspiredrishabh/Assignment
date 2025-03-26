@@ -178,23 +178,97 @@
 }
 
 /* Responsive styles */
-@media (max-width: 600px) {
+/* Large screens (default) */
+@media (min-width: 992px) {
+  .app-container {
+    padding: 2.5rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 991px) {
+  .app-container {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 767px) {
   .app-container {
     padding: 1rem;
+    max-width: 100%;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+
+  .user-info {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .login-container {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: unset;
+  }
+
+  .form-group input {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens (small phones) */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 0.75rem;
   }
 
   .form-row {
     flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .task-input,
+  .priority-select,
+  .add-button {
+    width: 100%;
   }
 
   .todo-item {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .todo-actions {
     width: 100%;
-    margin-top: 0.75rem;
-    justify-content: flex-end;
+    justify-content: space-between;
+  }
+
+  .todo-content {
+    width: 100%;
+  }
+
+  .todo-title {
+    word-break: break-word;
+    font-size: 0.95rem;
+  }
+
+  .priority-update {
+    max-width: 50%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
   }
 }

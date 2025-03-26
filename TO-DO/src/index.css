@@ -13,12 +13,23 @@
   --high-priority: #ff6b6b;
   --medium-priority: #feca57;
   --low-priority: #5cb85c;
+
+  /* Responsive font sizes */
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
 }
 
 body {
@@ -30,6 +41,7 @@ body {
   background-color: var(--light-gray);
   color: var(--black);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 button {
@@ -48,6 +60,7 @@ select {
   padding: 8px 12px;
   font-size: 16px;
   outline: none;
+  width: 100%;
 }
 
 input:focus,
@@ -56,10 +69,19 @@ select:focus {
   box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
 
-h1,
-h2,
-h3 {
+h1 {
+  font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Form styles */
@@ -71,4 +93,41 @@ h3 {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
+}
+
+/* Responsive typography */
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  button {
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
 }

@@ -18,6 +18,20 @@ const TodoItem = ({ task }) => {
     }
   };
 
+  // Get priority emoji for better visual cues
+  const getPriorityEmoji = () => {
+    switch (task.priority) {
+      case "High":
+        return "🔴 ";
+      case "Medium":
+        return "🟡 ";
+      case "Low":
+        return "🟢 ";
+      default:
+        return "";
+    }
+  };
+
   return (
     <div
       className={`todo-item ${getPriorityClass()} ${
@@ -30,9 +44,13 @@ const TodoItem = ({ task }) => {
           checked={task.completed}
           onChange={() => toggleTaskCompletion(task.id)}
           className="todo-checkbox"
+          aria-label={`Mark ${task.title} as ${task.completed ? 'incomplete' : 'complete'}`}
         />
 
-        <span className="todo-title">{task.title}</span>
+        <span className="todo-title">
+          <span className="priority-indicator" aria-hidden="true">{getPriorityEmoji()}</span>
+          {task.title}
+        </span>
       </div>
 
       <div className="todo-actions">
@@ -40,13 +58,18 @@ const TodoItem = ({ task }) => {
           value={task.priority}
           onChange={(e) => updateTaskPriority(task.id, e.target.value)}
           className="priority-update"
+          aria-label="Change task priority"
         >
           <option value="High">High</option>
           <option value="Medium">Medium</option>
           <option value="Low">Low</option>
         </select>
 
-        <button onClick={() => deleteTask(task.id)} className="delete-button">
+        <button 
+          onClick={() => deleteTask(task.id)} 
+          className="delete-button"
+          aria-label={`Delete task: ${task.title}`}
+        >
           Delete
         </button>
       </div>
