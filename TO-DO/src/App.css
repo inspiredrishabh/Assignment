@@ -1,22 +1,33 @@
 /* App container */
 .app-container {
-  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 
-/* Header and Navigation styles */
+.todo-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header and Navigation styles - UPDATED */
 .app-header {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--mid-gray);
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Brand & Logo */
+/* Brand & Logo - IMPROVED */
 .header-left {
   display: flex;
   align-items: center;
@@ -25,34 +36,35 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background-color: var(--primary-color);
   color: white;
   border-radius: 50%;
   font-size: 18px;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .brand h1 {
   font-size: 1.5rem;
   margin: 0;
   color: var(--primary-color);
+  font-weight: 600;
 }
 
-/* Main Navigation */
+/* Main Navigation - CENTERED */
 .main-nav {
   flex: 1;
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .nav-links {
@@ -61,7 +73,6 @@
   gap: 2rem;
   padding: 0;
   margin: 0;
-  width: 100%;
   justify-content: center;
 }
 
@@ -72,11 +83,12 @@
 
 .nav-item a {
   text-decoration: none;
-  color: var(--dark-gray);
+  color: var(--secondary-color);
   font-weight: 500;
   padding: 0.5rem 0;
   transition: all 0.2s ease;
   position: relative;
+  font-size: 1rem;
 }
 
 .nav-item a:after {
@@ -103,7 +115,7 @@
   color: var(--primary-color);
 }
 
-/* User info and authentication */
+/* User info and authentication - ENHANCED */
 .header-right {
   display: flex;
   align-items: center;
@@ -113,6 +125,9 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  background-color: var(--light-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
 
 .user-welcome {
@@ -123,12 +138,13 @@
 }
 
 .greeting {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--dark-gray);
 }
 
 .username {
   font-weight: 600;
+  color: var(--secondary-color);
 }
 
 .logout-button {
@@ -136,44 +152,56 @@
   color: white;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .logout-button:hover {
   background-color: #c9302c;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .login-nav-button {
   background-color: var(--primary-color);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .login-nav-button:hover {
   background-color: #3a80d0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Login container */
+/* Login container - IMPROVED */
 .login-container {
   max-width: 400px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 2rem;
   background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .login-container h2 {
   text-align: center;
   margin-bottom: 1.5rem;
+  color: var(--secondary-color);
 }
 
 .error-message {
   color: var(--danger-color);
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
   background-color: rgba(217, 83, 79, 0.1);
-  border-radius: 4px;
+  border-radius: 6px;
   text-align: center;
+  font-weight: 500;
 }
 
 .login-button {
@@ -181,32 +209,42 @@
   background-color: var(--primary-color);
   color: white;
   margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 .login-button:hover {
   background-color: #3a80d0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .login-hint {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   text-align: center;
   font-size: 0.9rem;
   color: var(--dark-gray);
+  background-color: var(--light-gray);
+  padding: 0.75rem;
+  border-radius: 6px;
 }
 
-/* Todo form */
+/* Todo form - ENHANCED */
 .todo-form {
   margin-bottom: 2rem;
   background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .input-wrapper {
@@ -216,6 +254,13 @@
 
 .task-input {
   width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.task-input:focus {
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
 }
 
 .select-wrapper {
@@ -224,6 +269,8 @@
 
 .priority-select {
   width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
 }
 
 .button-wrapper {
@@ -234,25 +281,32 @@
   background-color: var(--success-color);
   color: white;
   white-space: nowrap;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .add-button:hover {
   background-color: #4cae4c;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Todo list */
+/* Todo list - ENHANCED */
 .todo-list {
   background-color: var(--white);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .todo-list h2 {
   margin-bottom: 1.5rem;
-  color: var(--dark-gray);
+  color: var(--secondary-color);
   border-bottom: 1px solid var(--mid-gray);
   padding-bottom: 0.75rem;
+  font-weight: 600;
 }
 
 .tasks-container {
@@ -263,22 +317,27 @@
 
 .empty-list {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 1rem;
   color: var(--dark-gray);
-  background-color: var(--white);
+  background-color: var(--light-gray);
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Todo item */
+/* Todo item - IMPROVED */
 .todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem;
-  border-radius: 4px;
+  padding: 1rem;
+  border-radius: 8px;
   background-color: var(--light-gray);
   border-left: 4px solid var(--mid-gray);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .todo-item.completed {
@@ -287,6 +346,7 @@
 
 .todo-item.completed .todo-title {
   text-decoration: line-through;
+  color: var(--dark-gray);
 }
 
 .priority-high {
@@ -307,22 +367,34 @@
   gap: 0.75rem;
 }
 
+.todo-title {
+  font-weight: 500;
+}
+
 .todo-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .todo-checkbox {
   width: 18px;
   height: 18px;
+  cursor: pointer;
+}
+
+.priority-update {
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
 .delete-button {
   background-color: var(--danger-color);
   color: white;
-  padding: 4px 8px;
+  padding: 0.5rem 0.75rem;
   font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 .delete-button:hover {
@@ -332,26 +404,17 @@
 /* Responsive styles */
 
 @media (max-width: 767px) {
-  .app-container {
-    padding: 1rem;
-    max-width: 100%;
-  }
-
-  .app-header {
+  .header-inner {
     flex-direction: column;
-    align-items: center;
-    padding-bottom: 1.5rem;
-    gap: 1rem;
+    padding: 1rem;
   }
 
-  .header-left,
+  .header-left {
+    margin-bottom: 1rem;
+  }
+
   .header-right {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .brand {
-    justify-content: center;
+    margin-top: 1rem;
   }
 
   .nav-links {
@@ -359,7 +422,7 @@
   }
 
   .nav-item a {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .user-info {
@@ -373,17 +436,12 @@
   }
 
   .login-container {
+    margin: 2rem 1rem;
     padding: 1.5rem;
-    margin: 1rem;
-    max-width: unset;
   }
 }
 
 @media (max-width: 600px) {
-  .app-container {
-    padding: 0.75rem;
-  }
-
   .form-row {
     flex-direction: column;
     gap: 0.75rem;

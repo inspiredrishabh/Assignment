@@ -15,14 +15,16 @@ const AppContent = () => {
     <div className="app-container">
       <Header />
 
-      {isAuthenticated ? (
-        <div className="todo-container">
-          <TodoForm />
-          <TodoList />
-        </div>
-      ) : (
-        <Login />
-      )}
+      <div className="todo-container">
+        {isAuthenticated ? (
+          <>
+            <TodoForm />
+            <TodoList />
+          </>
+        ) : (
+          <Login />
+        )}
+      </div>
     </div>
   );
 };
