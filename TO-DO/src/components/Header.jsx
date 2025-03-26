@@ -12,7 +12,7 @@ const Header = () => {
           <h1>TaskMaster</h1>
         </div>
       </div>
-      
+
       <nav className="main-nav">
         <ul className="nav-links">
           <li className="nav-item active">
