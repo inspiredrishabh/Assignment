@@ -1,5 +1,5 @@
-import React from 'react';
-import { useAuth } from '../contexts/AuthContext';
+import React from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 const Header = () => {
   const { isAuthenticated, username, logout } = useAuth();
@@ -10,7 +10,9 @@ const Header = () => {
       {isAuthenticated && (
         <div className="user-info">
           <span>Welcome, {username}</span>
-          <button onClick={logout} className="logout-button">Logout</button>
+          <button onClick={logout} className="logout-button">
+            Logout
+          </button>
         </div>
       )}
     </header>
