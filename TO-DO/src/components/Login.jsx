@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
   const { login, error, clearError, isAuthenticated } = useAuth();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(username, password);
+    login(user, pass);
   };
 
   if (isAuthenticated) {
@@ -21,41 +21,41 @@ const Login = () => {
   }
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
+    <div className="login-box">
+      <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
-        {error && <div className="error-message">{error}</div>}
+        {error && <div className="error-box">{error}</div>}
 
-        <div className="form-group">
+        <div className="input-group">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
+            placeholder="Your username"
             required
           />
         </div>
 
-        <div className="form-group">
+        <div className="input-group">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter password"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+            placeholder="Your password"
             required
           />
         </div>
 
-        <button type="submit" className="login-button">
-          Login
+        <button type="submit" className="signin-button">
+          Sign In
         </button>
       </form>
 
-      <p className="login-hint">
+      <p className="login-tip">
         Hint: Try username "admin" with password "admin123"
       </p>
     </div>
