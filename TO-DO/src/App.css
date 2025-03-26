@@ -2,7 +2,6 @@
 .app-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 /* Header and Navigation styles */
@@ -331,23 +330,6 @@
 }
 
 /* Responsive styles */
-@media (min-width: 1440px) {
-  .app-container {
-    max-width: 1200px;
-    padding: 3rem;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1439px) {
-  .app-container {
-    max-width: 90%;
-    padding: 2rem;
-  }
-
-  .form-row {
-    gap: 1rem;
-  }
-}
 
 @media (max-width: 767px) {
   .app-container {
