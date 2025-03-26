@@ -19,19 +19,19 @@ Here's a visual overview of the application:
 
 ### Login Screen
 
-![Login Screen](/1.png)
+![Login Screen](./public/1.png)
 
 ### Task Dashboard
 
-![Task Dashboard](/2.png)
+![Task Dashboard](./public/2.png)
 
 ### Adding a New Task
 
-![Adding a Task](/3.png)
+![Adding a Task](./public/3.png)
 
 ### Responsivenes
 
-![Task Management](/4.png)
+![Task Management](./public/4.png)
 
 ## Built With
 
