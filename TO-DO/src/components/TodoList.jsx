@@ -7,17 +7,11 @@ const TodoList = () => {
 
   // Group tasks by priority
   const importantTasks = tasks.filter((task) => task.priority === "High");
-  const normalTasks = tasks.filter(
-    (task) => task.priority === "Medium"
-  );
+  const normalTasks = tasks.filter((task) => task.priority === "Medium");
   const lowPriorityTasks = tasks.filter((task) => task.priority === "Low");
 
   // Combine tasks in priority order
-  const allTasks = [
-    ...importantTasks,
-    ...normalTasks,
-    ...lowPriorityTasks,
-  ];
+  const allTasks = [...importantTasks, ...normalTasks, ...lowPriorityTasks];
 
   if (tasks.length === 0) {
     return (
