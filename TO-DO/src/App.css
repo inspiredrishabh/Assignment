@@ -7,6 +7,8 @@
 
 /* Header and Navigation styles */
 .app-header {
+  margin-right: 1rem;
+  margin-left: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -319,6 +321,9 @@
 .delete-button:hover {
   background-color: #c9302c;
 }
+.page-title {
+  padding: 1rem;
+}
 
 /* Responsive styles */
 /* Large laptops (1440px and above) */
@@ -350,7 +355,7 @@
 }
 
 /* Medium screens (tablets) */
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .app-container {
     padding: 1.5rem;
     max-width: 90%;
@@ -370,7 +375,7 @@
     width: 100%;
     justify-content: space-between;
   }
-}
+} */
 
 /* Small screens (mobile) */
 @media (max-width: 767px) {

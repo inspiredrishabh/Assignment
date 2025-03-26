@@ -48,17 +48,6 @@ const Header = () => {
           <li className="nav-item active">
             <a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a>
           </li>
-          {windowWidth <= 767 && isAuthenticated && (
-            <li className="nav-item mobile-user-info">
-              <span className="mobile-greeting">Welcome, {username}</span>
-              <button onClick={() => {
-                logout();
-                setMobileMenuOpen(false);
-              }} className="mobile-logout-button">
-                Logout
-              </button>
-            </li>
-          )}
         </ul>
       </nav>
 
