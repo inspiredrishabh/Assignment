@@ -28,7 +28,7 @@ const TodoForm = () => {
             required
           />
         </div>
-        
+
         <div className="select-wrapper">
           <select
             value={priority}
@@ -40,7 +40,7 @@ const TodoForm = () => {
             <option value="Low">Low</option>
           </select>
         </div>
-        
+
         <div className="button-wrapper">
           <button type="submit" className="add-button">
             Add Task
