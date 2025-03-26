@@ -1,27 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useAuth } from "../contexts/AuthContext";
 
 const Header = () => {
   const { isAuthenticated, username, logout } = useAuth();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // Handle window resize and close mobile menu on larger screens
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-      if (window.innerWidth > 767) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
 
   return (
     <header className="app-header">
@@ -30,23 +11,12 @@ const Header = () => {
           <span className="logo">✓</span>
           <h1>Todo App</h1>
         </div>
-        
-        <button 
-          className={`mobile-menu-toggle ${mobileMenuOpen ? 'open' : ''}`} 
-          onClick={toggleMobileMenu}
-          aria-label="Toggle navigation menu"
-          aria-expanded={mobileMenuOpen}
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
       </div>
 
-      <nav className={`main-nav ${mobileMenuOpen ? 'open' : ''}`}>
+      <nav className="main-nav">
         <ul className="nav-links">
           <li className="nav-item active">
-            <a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a>
+            <a href="#home">Home</a>
           </li>
         </ul>
       </nav>
