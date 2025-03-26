@@ -14,7 +14,7 @@ const AppContent = () => {
   return (
     <div className="app-wrapper">
       <Header />
-      
+
       <div className="app-container">
         {isAuthenticated ? (
           <div className="todo-container">
